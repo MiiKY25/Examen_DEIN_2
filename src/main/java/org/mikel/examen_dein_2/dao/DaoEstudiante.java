@@ -19,7 +19,7 @@ public class DaoEstudiante {
     /**
      * LOGGER para registrar eventos y errores.
      */
-    private static final Logger LOGGER = Logger.getLogger(DaoEstudiante.class.getName());
+    //private static final Logger LOGGER = Logger.getLogger(DaoEstudiante.class.getName());
 
     /**
      * Obtiene todos los alumnos de la base de datos.
@@ -33,6 +33,7 @@ public class DaoEstudiante {
             String consulta = "SELECT dni_estudiante,nombre,primerApellido,segundApellido FROM Estudiante";
             PreparedStatement pstmt = connection.getConnection().prepareStatement(consulta);
             ResultSet rs = pstmt.executeQuery();
+
             while (rs.next()) {
                 String dni = rs.getString(1);
                 String nombre = rs.getString(2);
@@ -40,14 +41,15 @@ public class DaoEstudiante {
                 String apellido2 = rs.getString(4);
                 Estudiante a =new Estudiante(dni,nombre,apellido1,apellido2);
                 estudiantes.add(a);
+                System.out.println("Cargando Estudiante: " + dni + ", " + nombre + ", " + apellido1 + ", " + apellido2);
             }
             rs.close();
             connection.CloseConexion();
 
             // Log de éxito
-            LOGGER.info("Lista de estudiantes cargada correctamente.");
+            //LOGGER.info("Lista de estudiantes cargada correctamente.");
         } catch (SQLException e) {
-            LOGGER.severe("Error al obtener la lista de estudiantes: " + e.getMessage());
+            //LOGGER.severe("Error al obtener la lista de estudiantes: " + e.getMessage());
             System.err.println(e.getMessage());
         }
         return estudiantes;
@@ -77,9 +79,9 @@ public class DaoEstudiante {
             rs.close();
             connection.CloseConexion();
             // Log de éxito
-            LOGGER.info("Alumno encontrado con DNI: " + dni_estudiante);
+            //LOGGER.info("Alumno encontrado con DNI: " + dni_estudiante);
         } catch (SQLException e) {
-            LOGGER.severe("Error al obtener el alumno con DNI " + dni_estudiante + ": " + e.getMessage());
+            //LOGGER.severe("Error al obtener el alumno con DNI " + dni_estudiante + ": " + e.getMessage());
             System.err.println(e.getMessage());
         }
         return estudiante;
@@ -105,9 +107,9 @@ public class DaoEstudiante {
             resul = pstmt.executeUpdate();
             pstmt.close();
             connection.CloseConexion();
-            LOGGER.info("Alumno insertado correctamente: " + a.getDni());
+            //LOGGER.info("Alumno insertado correctamente: " + a.getDni());
         } catch (SQLException e) {
-            LOGGER.severe("Error al insertar el alumno " + a.getDni() + ": " + e.getMessage());
+            //LOGGER.severe("Error al insertar el alumno " + a.getDni() + ": " + e.getMessage());
             e.printStackTrace();
         }
         return resul > 0;
@@ -133,9 +135,9 @@ public class DaoEstudiante {
             resul = pstmt.executeUpdate();
             pstmt.close();
             connection.CloseConexion();
-            LOGGER.info("Alumno actualizado correctamente: " + a.getDni());
+            //LOGGER.info("Alumno actualizado correctamente: " + a.getDni());
         } catch (SQLException e) {
-            LOGGER.severe("Error al actualizar el alumno " + a.getDni() + ": " + e.getMessage());
+            //LOGGER.severe("Error al actualizar el alumno " + a.getDni() + ": " + e.getMessage());
             e.printStackTrace();
         }
         return resul > 0;
@@ -160,9 +162,9 @@ public class DaoEstudiante {
             }
             rs.close();
             connection.CloseConexion();
-            LOGGER.info("Alumno con DNI " + dni + " existe:");
+            //LOGGER.info("Alumno con DNI " + dni + " existe:");
         } catch (SQLException e) {
-            LOGGER.severe("Error al verificar existencia del alumno: " + e.getMessage());
+            //LOGGER.severe("Error al verificar existencia del alumno: " + e.getMessage());
             e.printStackTrace();
         }
         return existe;
