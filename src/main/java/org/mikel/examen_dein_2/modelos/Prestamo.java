@@ -57,7 +57,7 @@ public class Prestamo {
     /**
      * Obtiene el estudiante al que se le ha prestado el libro.
      *
-     * @return Alumno del préstamo.
+     * @return Estudiante del préstamo.
      */
     public Estudiante getEstudiante() {
         return estudiante;
@@ -66,7 +66,7 @@ public class Prestamo {
     /**
      * Establece el estudiante al que se le ha prestado el libro.
      *
-     * @param estudiante Alumno del préstamo.
+     * @param estudiante Estudiante del préstamo.
      */
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
@@ -129,10 +129,10 @@ public class Prestamo {
     /**
      * Devuelve una representación en cadena del préstamo.
      *
-     * @return Cadena con el formato "ID - Alumno: Nombre - Libro: Título".
+     * @return Cadena con el formato "ID - Estudiante: Nombre - Libro: Título".
      */
     @Override
     public String toString() {
-        return id + " - Alumno: " + estudiante.getNombre() + " - Libro: " + libro.getTitulo();
+        return id + " - Estudiante: " + estudiante.getNombre() + " - Libro: " + libro.getTitulo();
     }
 }

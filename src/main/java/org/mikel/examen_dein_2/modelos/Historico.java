@@ -18,7 +18,7 @@ public class Historico {
      * Constructor con todos los atributos.
      *
      * @param id              Identificador del registro histórico.
-     * @param alumno          Alumno que realizó el préstamo.
+     * @param alumno          Estudiante que realizó el préstamo.
      * @param libro           Libro prestado.
      * @param prestamo_online Verifica si es un prestamo online.
      * @param fecha_prestamo  Fecha en que se realizó el préstamo.
@@ -60,7 +60,7 @@ public class Historico {
     /**
      * Obtiene el estudiante que realizó el préstamo.
      *
-     * @return Alumno que realizó el préstamo.
+     * @return Estudiante que realizó el préstamo.
      */
     public Estudiante getEstudiante() {
         return estudiante;
@@ -69,7 +69,7 @@ public class Historico {
     /**
      * Establece el estudiante que realizó el préstamo.
      *
-     * @param estudiante Alumno que realizó el préstamo.
+     * @param estudiante Estudiante que realizó el préstamo.
      */
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
@@ -150,10 +150,10 @@ public class Historico {
     /**
      * Devuelve una representación en cadena del registro histórico.
      *
-     * @return Cadena con el formato "ID - Alumno: Nombre - Libro: Título".
+     * @return Cadena con el formato "ID - Estudiante: Nombre - Libro: Título".
      */
     @Override
     public String toString() {
-        return id + " - Alumno: " + estudiante.getNombre() + " - Libro: " + libro.getTitulo();
+        return id + " - Estudiante: " + estudiante.getNombre() + " - Libro: " + libro.getTitulo();
     }
 }

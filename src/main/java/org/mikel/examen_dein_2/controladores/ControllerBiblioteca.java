@@ -361,7 +361,7 @@ public class ControllerBiblioteca {
             Locale locale = new Locale(lang);
             ResourceBundle bundle = ResourceBundle.getBundle("idiomas/lang", locale);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Estudiante.fxml"),bundle);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Alumno.fxml"),bundle);
             Parent root = fxmlLoader.load();
 
             ControllerEstudiante controller=fxmlLoader.getController();

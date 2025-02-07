@@ -32,79 +32,79 @@ public class Estudiante {
     }
 
     /**
-     * Obtiene el DNI del alumno.
+     * Obtiene el DNI del Estudiante.
      *
-     * @return DNI del alumno.
+     * @return DNI del Estudiante.
      */
     public String getDni() {
         return dni;
     }
 
     /**
-     * Establece el DNI del alumno.
+     * Establece el DNI del Estudiante.
      *
-     * @param dni DNI del alumno.
+     * @param dni DNI del Estudiante.
      */
     public void setDni(String dni) {
         this.dni = dni;
     }
 
     /**
-     * Obtiene el nombre del alumno.
+     * Obtiene el nombre del Estudiante.
      *
-     * @return Nombre del alumno.
+     * @return Nombre del Estudiante.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Establece el nombre del alumno.
+     * Establece el nombre del Estudiante.
      *
-     * @param nombre Nombre del alumno.
+     * @param nombre Nombre del Estudiante.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * Obtiene el primer apellido del alumno.
+     * Obtiene el primer apellido del Estudiante.
      *
-     * @return Primer apellido del alumno.
+     * @return Primer apellido del Estudiante.
      */
     public String getApellido1() {
         return apellido1;
     }
 
     /**
-     * Establece el primer apellido del alumno.
+     * Establece el primer apellido del Estudiante.
      *
-     * @param apellido1 Primer apellido del alumno.
+     * @param apellido1 Primer apellido del Estudiante.
      */
     public void setApellido1(String apellido1) {
         this.apellido1 = apellido1;
     }
 
     /**
-     * Obtiene el segundo apellido del alumno.
+     * Obtiene el segundo apellido del Estudiante.
      *
-     * @return Segundo apellido del alumno.
+     * @return Segundo apellido del Estudiante.
      */
     public String getApellido2() {
         return apellido2;
     }
 
     /**
-     * Establece el segundo apellido del alumno.
+     * Establece el segundo apellido del Estudiante.
      *
-     * @param apellido2 Segundo apellido del alumno.
+     * @param apellido2 Segundo apellido del Estudiante.
      */
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
     }
 
     /**
-     * Devuelve una representación en cadena del alumno.
+     * Devuelve una representación en cadena del Estudiante.
      *
      * @return Cadena con el formato "DNI - Nombre".
      */

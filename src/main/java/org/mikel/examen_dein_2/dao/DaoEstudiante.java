@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 /**
- * Clase DaoAlumno para gestionar el acceso a los datos de los alumnos.
+ * Clase DaoEstudiante para gestionar el acceso a los datos de los Estudiantes.
  */
 public class DaoEstudiante {
 
@@ -19,11 +19,11 @@ public class DaoEstudiante {
     /**
      * LOGGER para registrar eventos y errores.
      */
-    //private static final Logger LOGGER = Logger.getLogger(DaoEstudiante.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DaoEstudiante.class.getName());
 
     /**
-     * Obtiene todos los alumnos de la base de datos.
-     * @return Lista de alumnos en un ObservableList.
+     * Obtiene todos los Estudiantes de la base de datos.
+     * @return Lista de Estudiantes en un ObservableList.
      */
     public static ObservableList<Estudiante> todosEstudiantes() {
         ConexionBBDD connection;
@@ -47,18 +47,18 @@ public class DaoEstudiante {
             connection.CloseConexion();
 
             // Log de éxito
-            //LOGGER.info("Lista de estudiantes cargada correctamente.");
+            LOGGER.info("Lista de estudiantes cargada correctamente.");
         } catch (SQLException e) {
-            //LOGGER.severe("Error al obtener la lista de estudiantes: " + e.getMessage());
+            LOGGER.severe("Error al obtener la lista de estudiantes: " + e.getMessage());
             System.err.println(e.getMessage());
         }
         return estudiantes;
     }
 
     /**
-     * Obtiene un alumno por su DNI.
-     * @param dni_estudiante DNI del alumno a buscar.
-     * @return Alumno encontrado o null si no existe.
+     * Obtiene un Estudiante por su DNI.
+     * @param dni_estudiante DNI del Estudiante a buscar.
+     * @return Estudiante encontrado o null si no existe.
      */
     public static Estudiante EstudianteID(String dni_estudiante) {
         ConexionBBDD connection;
@@ -79,17 +79,17 @@ public class DaoEstudiante {
             rs.close();
             connection.CloseConexion();
             // Log de éxito
-            //LOGGER.info("Alumno encontrado con DNI: " + dni_estudiante);
+            LOGGER.info("Estudiante encontrado con DNI: " + dni_estudiante);
         } catch (SQLException e) {
-            //LOGGER.severe("Error al obtener el alumno con DNI " + dni_estudiante + ": " + e.getMessage());
+            LOGGER.severe("Error al obtener el Estudiante con DNI " + dni_estudiante + ": " + e.getMessage());
             System.err.println(e.getMessage());
         }
         return estudiante;
     }
 
     /**
-     * Crea un nuevo alumno en la base de datos.
-     * @param a Alumno a insertar.
+     * Crea un nuevo Estudiante en la base de datos.
+     * @param a Estudiante a insertar.
      * @return true si se insertó correctamente, false en caso contrario.
      */
     public static boolean crearEstudiante(Estudiante a) {
@@ -107,17 +107,17 @@ public class DaoEstudiante {
             resul = pstmt.executeUpdate();
             pstmt.close();
             connection.CloseConexion();
-            //LOGGER.info("Alumno insertado correctamente: " + a.getDni());
+            LOGGER.info("Estudiante insertado correctamente: " + a.getDni());
         } catch (SQLException e) {
-            //LOGGER.severe("Error al insertar el alumno " + a.getDni() + ": " + e.getMessage());
+            LOGGER.severe("Error al insertar el Estudiante " + a.getDni() + ": " + e.getMessage());
             e.printStackTrace();
         }
         return resul > 0;
     }
 
     /**
-     * Modifica los datos de un alumno en la base de datos.
-     * @param a Alumno con los datos actualizados.
+     * Modifica los datos de un Estudiante en la base de datos.
+     * @param a Estudiante con los datos actualizados.
      * @return true si se actualizó correctamente, false en caso contrario.
      */
     public static boolean editarEstudiante(Estudiante a) {
@@ -135,9 +135,9 @@ public class DaoEstudiante {
             resul = pstmt.executeUpdate();
             pstmt.close();
             connection.CloseConexion();
-            //LOGGER.info("Alumno actualizado correctamente: " + a.getDni());
+            LOGGER.info("Estudiante actualizado correctamente: " + a.getDni());
         } catch (SQLException e) {
-            //LOGGER.severe("Error al actualizar el alumno " + a.getDni() + ": " + e.getMessage());
+            LOGGER.severe("Error al actualizar el Estudiante " + a.getDni() + ": " + e.getMessage());
             e.printStackTrace();
         }
         return resul > 0;
@@ -162,9 +162,9 @@ public class DaoEstudiante {
             }
             rs.close();
             connection.CloseConexion();
-            //LOGGER.info("Alumno con DNI " + dni + " existe:");
+            LOGGER.info("Estudiante con DNI " + dni + " existe:");
         } catch (SQLException e) {
-            //LOGGER.severe("Error al verificar existencia del alumno: " + e.getMessage());
+            LOGGER.severe("Error al verificar existencia del Estudiante: " + e.getMessage());
             e.printStackTrace();
         }
         return existe;
