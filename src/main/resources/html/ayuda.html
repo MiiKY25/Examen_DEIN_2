@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Usuario y Documentación</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+        color: #2C3E50;
+    }
+    .section {
+        margin-bottom: 30px;
+    }
+    .content {
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .subsection {
+        margin-top: 20px;
+    }
+    .code {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Consolas, monospace;
+        margin-top: 10px;
+    }
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    .diagram {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .button:hover {
+        background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Guía de Usuario y Documentación</h1>
+
+<!-- Sección de Introducción -->
+<div class="section">
+  <h2>Introducción</h2>
+  <div class="content">
+    <p>Esta aplicación permite gestionar alumnos, libros, préstamos y devoluciones de manera eficiente y amigable. A continuación se detallan los pasos para la instalación y las funcionalidades disponibles.</p>
+  </div>
+</div>
+
+<!-- Sección de Instalación -->
+<div class="section">
+  <h2>Instalación</h2>
+  <div class="content">
+    <h3>Requisitos Previos</h3>
+    <ul>
+      <li>Java 8 o superior.</li>
+      <li>Base de datos MySQL o SQLite.</li>
+      <li>Herramientas de desarrollo como IntelliJ IDEA o Visual Studio.</li>
+    </ul>
+
+    <h3>Pasos para la instalación:</h3>
+    <ol>
+      <li>Clonar el repositorio de GitHub.</li>
+      <li>Configurar la base de datos con los scripts proporcionados.</li>
+      <li>Importar el proyecto en tu entorno de desarrollo.</li>
+      <li>Compilar y ejecutar el proyecto.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Sección de Funcionalidades -->
+<div class="section">
+  <h2>Funcionalidades</h2>
+  <div class="content">
+    <h3>Gestión de Alumnos</h3>
+    <p>Permite dar de alta, modificar y consultar la información de los alumnos registrados en el sistema.</p>
+
+    <h3>Gestión de Libros</h3>
+    <p>Los libros pueden ser dados de alta, modificados, y dados de baja. En caso de baja, el libro no se eliminará de la base de datos, sino que se actualizará su estado.</p>
+
+    <h3>Gestión de Préstamos</h3>
+    <p>Los libros se pueden prestar y consultar, siempre que no estén ya prestados. Cuando un libro se presta, se guarda el estado del préstamo y se genera un informe en PDF.</p>
+
+    <h3>Gestión de Devoluciones</h3>
+    <p>Permite registrar las devoluciones de libros, modificar su estado y moverlos al historial de préstamos.</p>
+  </div>
+</div>
+
+<!-- Sección de Informes -->
+<div class="section">
+  <h2>Informes Generados</h2>
+  <div class="content">
+    <h3>Informe 1: Préstamo de Libro</h3>
+    <p>Cuando un libro se presta, se genera un informe en PDF que contiene los datos del préstamo, incluyendo el alumno, el libro, la fecha de préstamo y la fecha límite de devolución.</p>
+
+    <h3>Informe 2: Listado de Libros</h3>
+    <p>Este informe muestra un listado de todos los libros, con un subinforme que muestra los préstamos que ha tenido cada libro.</p>
+
+    <h3>Informe 3: Gráficos de Préstamos</h3>
+    <p>Genera varios gráficos que muestran la cantidad de veces que un libro ha sido prestado, entre otros datos estadísticos.</p>
+
+    <h3>Informe 4: Informe de Alumnos</h3>
+    <p>Este informe muestra información sobre los alumnos, como el número de libros que han tenido en préstamo y el tiempo total de préstamo.</p>
+  </div>
+</div>
+
+<!-- Sección de Diagramas -->
+<div class="section">
+  <h2>Diagramas</h2>
+  <div class="content">
+    <h3>Diagrama Entidad-Relación (E/R)</h3>
+    <div class="diagram">
+      <img src="/imagenes/diagramaE-R.png" alt="Diagrama Entidad-Relación">
+      <p><em>Diagrama Entidad-Relación de la base de datos.</em></p>
+    </div>
+
+    <h3>Diagrama de Caso de Uso UML</h3>
+    <div class="diagram">
+      <img src="diagrama_UML.png" alt="Diagrama de Caso de Uso UML">
+      <p><em>Diagrama de casos de uso UML.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- Sección Multidioma -->
+<div class="section">
+  <h2>Multidioma</h2>
+  <div class="content">
+    <p>La aplicación soporta varios idiomas. Puedes cambiar el idioma desde el menú de configuración.</p>
+  </div>
+</div>
+
+</body>
+</html>
