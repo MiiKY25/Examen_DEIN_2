@@ -136,6 +136,7 @@
                               <TableColumn fx:id="colPrestamoID" prefWidth="322.0" text="%biblio.col.prestamo.id" />
                               <TableColumn fx:id="colPrestamoEstudiante" prefWidth="376.0" text="%biblio.col.prestamo.dni" />
                               <TableColumn fx:id="colPrestamoLibro" prefWidth="376.0" text="%biblio.col.prestamo.libro" />
+                              <TableColumn fx:id="colPrestamoOnline" prefWidth="376.0" text="%biblio.col.prestamo.online" />
                               <TableColumn fx:id="colPrestamoFecha" prefWidth="376.0" text="%biblio.col.prestamo.fecha" />
                            </columns>
                            <columnResizePolicy>
@@ -170,6 +171,7 @@
                               <TableColumn fx:id="colHistoricoID" prefWidth="142.0" text="%biblio.col.his.id" />
                               <TableColumn fx:id="colHistoricoEstudiante" prefWidth="113.0" text="%biblio.col.his.dni" />
                               <TableColumn fx:id="colHistoricoLibro" prefWidth="112.0" text="%biblio.col.his.libro" />
+                              <TableColumn fx:id="colHistoricoOnline" prefWidth="112.0" text="%biblio.col.prestamo.online" />
                               <TableColumn fx:id="colHistoricoFecha" prefWidth="164.0" text="%biblio.col.his.fechap" />
                               <TableColumn fx:id="colHistoricoDevolucion" prefWidth="173.0" text="%biblio.col.his.fechad" />
                            </columns>

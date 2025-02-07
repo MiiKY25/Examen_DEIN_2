@@ -211,6 +211,12 @@ public class ControllerBiblioteca {
     @FXML
     private TextField txtFiltroHistorico;
 
+    @FXML
+    private TableColumn<Prestamo, Boolean> colPrestamoOnline;
+
+    @FXML
+    private TableColumn<Historico, Boolean> colHistoricoOnline;
+
     /**
      * Botón que permite devolver un libro.
      */
@@ -798,6 +804,28 @@ public class ControllerBiblioteca {
         colHistoricoLibro.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getLibro().getTitulo()));
 
+        // Configurar la columna para que muestre un CheckBox
+        colHistoricoOnline.setCellValueFactory(new PropertyValueFactory<>("prestamo_online"));
+
+        // Configurar la columna para que use un TableCell personalizado con CheckBox deshabilitado
+        colHistoricoOnline.setCellFactory(column -> {
+            return new TableCell<Historico, Boolean>() {
+                private final CheckBox checkBox = new CheckBox();
+
+                @Override
+                protected void updateItem(Boolean item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        checkBox.setSelected(item != null && item);  // Marca o desmarca el CheckBox
+                        checkBox.setDisable(true);  // Deshabilita el CheckBox
+                        setGraphic(checkBox);
+                    }
+                }
+            };
+        });
+
         // Configurar la columna de fecha de préstamo
         colHistoricoFecha.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getFecha_prestamo()));
@@ -847,6 +875,28 @@ public class ControllerBiblioteca {
                 new SimpleStringProperty(cellData.getValue().getEstudiante().getDni()));
         colPrestamoLibro.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getLibro().getTitulo()));
+
+        // Configurar la columna para que muestre un CheckBox
+        colPrestamoOnline.setCellValueFactory(new PropertyValueFactory<>("prestamo_online"));
+
+        // Configurar la columna para que use un TableCell personalizado con CheckBox deshabilitado
+        colPrestamoOnline.setCellFactory(column -> {
+            return new TableCell<Prestamo, Boolean>() {
+                private final CheckBox checkBox = new CheckBox();
+
+                @Override
+                protected void updateItem(Boolean item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        checkBox.setSelected(item != null && item);  // Marca o desmarca el CheckBox
+                        checkBox.setDisable(true);  // Deshabilita el CheckBox
+                        setGraphic(checkBox);
+                    }
+                }
+            };
+        });
 
         // Configurar la columna de fecha de préstamo
         colPrestamoFecha.setCellValueFactory(new PropertyValueFactory<>("fecha_prestamo"));
