@@ -24,7 +24,7 @@ public class Libro {
      * @param estado    Estado del libro (ej. disponible, prestado, deteriorado).
      * @param baja      Indica si el libro está dado de baja (1) o activo (0).
      */
-    public Libro(int codigo, String titulo, String autor, String editorial, String estado, int baja, Blob foto) {
+    public Libro(int codigo, String titulo, String autor, String editorial, String estado, int baja) {
         this.isbn = codigo;
         this.titulo = titulo;
         this.autor = autor;
