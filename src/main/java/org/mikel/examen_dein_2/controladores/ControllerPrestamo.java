@@ -3,6 +3,7 @@ package org.mikel.examen_dein_2.controladores;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
@@ -50,6 +51,9 @@ public class ControllerPrestamo {
     @FXML
     private DatePicker fecha;
 
+    @FXML
+    private CheckBox checkOnline;
+
     /**
      * Acción de guardar un nuevo préstamo.
      * Valida los datos ingresados y crea un nuevo préstamo si los datos son correctos.
@@ -59,20 +63,21 @@ public class ControllerPrestamo {
      */
     @FXML
     void accionGuardar(ActionEvent event) {
-//        String error=validadDatos();
-//        if (error.isEmpty()){
-//            Prestamo p=new Prestamo(0,comboAlumnos.getValue(),comboLibros.getValue(),fecha.getValue());
-//            int idPrestamo=DaoPrestamo.crearPrestamo(p);
-//            if (idPrestamo != -1) {
-//                mostrarInfo("Prestamo creado correctamente");
-//                mostrarInforme(idPrestamo);
-//                cerrarVentana();
-//            }else {
-//                mostrarInfo("Error al crear el Prestamo");
-//            }
-//        }else {
-//            mostrarError(error);
-//        }
+        String error=validadDatos();
+        if (error.isEmpty()){
+            boolean online=checkOnline.isSelected();
+            Prestamo p=new Prestamo(0,comboAlumnos.getValue(),comboLibros.getValue(),online,fecha.getValue());
+            int idPrestamo=DaoPrestamo.crearPrestamo(p);
+            if (idPrestamo != -1) {
+                mostrarInfo("Prestamo creado correctamente");
+                mostrarInforme(idPrestamo);
+                cerrarVentana();
+            }else {
+                mostrarInfo("Error al crear el Prestamo");
+            }
+        }else {
+            mostrarError(error);
+        }
     }
 
     /**

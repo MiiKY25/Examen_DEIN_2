@@ -65,7 +65,7 @@ public class DaoHistorico {
         int resul = 0;
         try {
             connection = new ConexionBBDD();
-            String consulta = "INSERT INTO Historico_prestamo (dni_estudiante,isbn,prestamo_online,fecha_prestamo,fecha_devolucion) VALUES (?,?,?,?,?) ";
+            String consulta = "INSERT INTO Historial_prestamo (dni_estudiante,isbn,prestamo_online,fecha_prestamo,fecha_devolucion) VALUES (?,?,?,?,?) ";
             PreparedStatement pstmt = connection.getConnection().prepareStatement(consulta);
             pstmt.setString(1, p.getEstudiante().getDni());
             pstmt.setInt(2, p.getLibro().getIsbn());
