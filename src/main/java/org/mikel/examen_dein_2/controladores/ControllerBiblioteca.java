@@ -542,7 +542,7 @@ public class ControllerBiblioteca {
     @FXML
     void accionAcercaDe(ActionEvent event) {
         String msg="";
-        msg += "Gestión de Biblioteca \n";
+        msg += "Gestión de Biblioteca Examen \n";
         msg += "Autor: Mikel Ramos Quesada";
         mostrarInfo(msg);
     }
